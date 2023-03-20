@@ -1,13 +1,92 @@
-# 高松市 ベクトルタイル API 仕様
+# 高松市 スマートシティー地図 & API ドキュメント
 
-## リクエスト URL
+高松市が公開するスマートシティー地図は、どなたでも無料でご利用いただけます。
 
-タイル番号として z, x, y の値の組みを指定します。
-タイル番号は空間IDと互換性があり、空間 ID z/f/x/y から z/x/y に変換する場合、f を 0 に指定してください。
+## クイックスタート
 
-```shell
-https://example.com/tiles/{z}/{x}/{y}.pbf
+以下のソースをコピーして、開発を始めましょう。
+
+### 地図の表示
+
+**HTML**
+
 ```
+<div id="map"></div>
+
+<script type="text/javascript" src="https://geolonia.github.io/takamatsu-maps-sdk/index.js"></script>
+```
+
+**CSS**
+
+```
+html, body, #map
+{
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+```
+
+**Javascript**
+
+```
+const myCity = new city.Takamatsu.Map();
+
+myCity.on('load', () => {})
+```
+
+[Codepen で触ってみよう！](https://codepen.io/shinichin/pen/VwGGZyq)
+
+### データの表示
+
+高松市が公開する200種類以上のデータを、地図上に表示します。
+データの一覧は、[高松スマートシティ地図](https://map.takamatsu-fact.com/)で確認できます。
+
+**都市計画区分の表示**
+
+`loadData` メソッドを使って、地図上にデータを表示できます。
+
+```
+const myCity = new city.Takamatsu.Map();
+
+myCity.on('load', () => {  
+  
+  myCity.loadData("商業地域")
+  
+  myCity.loadData('第一種低層住居専用地域', {
+    'fill-color': 'purple',
+  })
+    
+})
+```
+
+### データの取得
+
+`hogehoge` メソッドを使って、地図上に表示しているデータが取得できます。
+
+```
+空間ID SDK か高松市のSDKを利用してデータを取得する簡単な方法を記入する
+イメージはオンクリックで情報を alert 表示か、console に出すか？
+```
+
+## SDK と API 
+
+SDK のメソッドを並べる
+
+## カスタムデータの追加
+
+独自のデータをGeoJSON、ベクトルタイル形式で表示する方法を並べる。
+
+パイプラインとかにリンクを貼る
+
+
+
+
+
+---
+
+以下は大きく変更予定
 
 ## レスポンス
 
