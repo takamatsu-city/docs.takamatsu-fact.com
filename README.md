@@ -39,11 +39,11 @@ myCity.on('load', () => {})
 ### 高松市のデータを表示する
 
 高松市が公開する200種類以上のデータを、地図上に表示できます。
-データの一覧は、[高松スマートマップ](https://maps.takamatsu-fact.com/)で確認できます。
+データの一覧は、[高松市スマートマップ](https://maps.takamatsu-fact.com/)で確認できます。
 
 **都市計画情報を表示する**
 
-`loadData` メソッドを使って、地図上に[高松スマートマップ](https://maps.takamatsu-fact.com/)で公開されているポリゴンデータを表示できます。
+`loadData` メソッドを使って、地図上に[高松市スマートマップ](https://maps.takamatsu-fact.com/)で公開されているポリゴンデータを表示できます。
 
 ```
 const myCity = new city.Takamatsu.Map();
