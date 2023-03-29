@@ -1,3 +1,4 @@
 theme: jekyll-theme-cayman
 title: 高松市スマートマップ 開発者向けドキュメンテーション
 description: 高松市が公開する地図と都市情報 API を活用したウェブサイトやアプリケーションを作る開発者のためのドキュメンテーションサイト
+google_analytics: G-TWMZDSGLQ4
