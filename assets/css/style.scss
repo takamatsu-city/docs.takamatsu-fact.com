@@ -24,9 +24,105 @@ a:hover {
     opacity: 0.8;
     color:red;
 }
-.page-header{
-    background:#0079c4;
+
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 52px;
+    &__logo {
+        width: min(22vw, 140px);
+        margin-left: 8px;
+    }
+    &__title {
+        color: #015591;
+        margin: 0 8px;
+        font-size: 13px;
+        line-height: 1;
+    }
+    .brand {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+    }
+    .maps-link {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        background: #FFFFFF;
+        border: 2px solid #0079C4;
+        border-radius: 8px;
+        padding: 7px 8px;
+        margin-right: 16px;
+        &__arrow{
+            display: none;
+        }
+        p{
+            margin: 0 8px;
+            font-weight: 700;
+            font-size: 12px;
+            line-height: 17px;
+            display: none;
+        }
+        &:hover{
+            color: #0079C4;
+            text-decoration: none;
+            background: rgba(0, 121, 196, 0.1);
+        }
+    }
 }
+  
+@media (min-width: 768px) {
+    .header {
+        height: auto;
+        padding: 0px 14px;
+        &__title {
+            font-size: min(4.1vw, 18px);
+        }
+        &__logo {
+            width: min(38vw, 240px);
+            margin-left: 8px;
+        }
+        .maps-link {
+            p{
+                display: block;
+            }
+            &__arrow{
+                display: block;
+            }
+        }
+    }
+}
+
+.page-header {
+    padding: 32px 16px;
+    background-color: #015591;
+    color: #fff;
+    background: url(../img/img_fv.jpg) center;
+    background-size: cover;
+    text-shadow: 0 0 4px rgba(0, 0, 0, 0.5), 0 0 4px rgba(0, 0, 0, 0.5), 0 0 4px rgba(0, 0, 0, 0.5);
+    .btn { 
+        text-shadow: none;
+        background-color: rgba(1, 85, 145, 0.8);
+        color: #ffffff;
+        &:hover{
+            color: #ffffff;
+            background-color: rgba(1, 85, 145, 1);
+            opacity: 1;
+            border-color: #fff;
+        }
+    }
+}
+
+
+@media (min-width: 768px) {
+  .page-header {
+    padding: 72px 16px;
+    text-align: center;
+  }
+}
+
 .project-tagline{
     opacity: 0.8;
 }
