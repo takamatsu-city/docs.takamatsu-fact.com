@@ -1,7 +1,3 @@
----
-layout: default
----
-
 [高松市スマートマップ](https://maps.takamatsu-fact.com/)、およびデータAPIを使うと、営利・非営利を問わず、地図と位置情報を活用したウェブサイトやアプリケーションを作ることができます。
 
 ## クイックスタート
@@ -38,12 +34,11 @@ const myCity = new city.Takamatsu.Map();
 myCity.on('load', () => {})
 ```
 
-[Codepen で触ってみよう！](https://codepen.io/shinichin/pen/VwGGZyq)
+[Codepen で確認する](https://codepen.io/shinichin/pen/VwGGZyq)
 
 ### 高松市のデータを表示する
 
-高松市が公開する200種類以上のデータを、地図上に表示できます。
-データの一覧は、[高松市スマートマップ](https://maps.takamatsu-fact.com/)で確認できます。
+高松市が[高松市スマートマップ](https://maps.takamatsu-fact.com/)公開しているデータを、地図上に表示できます。
 
 **都市計画情報を表示する**
 
@@ -55,13 +50,11 @@ const myCity = new city.Takamatsu.Map();
 myCity.on('load', () => {  
   
   myCity.loadData("商業地域")
-  
-  myCity.loadData('第一種低層住居専用地域', {
-    'fill-color': 'purple',
-  })
     
 })
 ```
+
+* 第一引数には、高松市スマートマップに表示されているデータの `class` 文字列を入れてください。
 
 **施設情報を表示する**
 
@@ -86,21 +79,9 @@ myCity.on('load', () => {
 オンクリックで情報を alert 表示か、console に出すか
 ```
 
-### カスタムデータを表示する
+## カスタマイズする
 
-```
-myCity.loadData("GeoJSON/vectortile のURL")
-```
-
-CSV から GeoJSON を作成し、GitHub Pages にホストするためには、[geoloniamaps/geojson\-api: CSV フォーマットのデータを GitHub Actions で GeoJSON に変換し API として公開するためのテンプレートリポジトリです。](https://github.com/geoloniamaps/geojson-api)をご利用いただけます。
-
-## SDK の詳細
-
-基本的なメソッドをいくつか並べる
-
-## カスタマイズ
-
-Maplibre, Geolonia いずれかのドキュメンテーションサイトにリンクを貼る
+高松市スマートマップは、Maplibre, Geolonia Maps と互換性があります。詳しいカスタマイズの方法は、[API Reference \| MapLibre GL JS Docs \| MapLibre](https://maplibre.org/maplibre-gl-js-docs/api/) を参照してください。
 
 ## ご利用にあたって
 
