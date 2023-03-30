@@ -98,14 +98,6 @@ myCity.on('load', () => {
 
 スタイルの設定は、 `addLayer` の `paint` 設定を使います。詳しくは、 [MapLibre GL JS のドキュメンテーション](https://maplibre.org/maplibre-gl-js-docs/style-spec/layers/#circle) を確認してください。
 
-### 都市情報APIのデータを取得する
-
-`hogehoge` メソッドを使って、地図上に表示している地物（ポリゴンや点）のデータを取得できます。
-
-```
-空間ID SDK か高松市のSDKを利用してデータを取得する簡単な方法を記入する
-オンクリックで情報を alert 表示か、console に出すか
-```
 
 ## カスタマイズする
 
