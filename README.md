@@ -58,17 +58,45 @@ myCity.on('load', () => {
 
 **施設情報を表示する**
 
-`loadGeoJSON` メソッドを使って、地図上に[高松市スマートマップ](https://maps.takamatsu-fact.com/)で公開されているポイントデータを表示できます。
+地図上に[高松市スマートマップ](https://maps.takamatsu-fact.com/)で公開されているポイントデータを表示できます。
+
+まずは、[高松市オープンデータ一覧](https://github.com/takamatsu-city/opendata/#%E9%AB%98%E6%9D%BE%E5%B8%82%E3%82%AA%E3%83%BC%E3%83%97%E3%83%B3%E3%83%87%E3%83%BC%E3%82%BF) から表示したいデータを選びます。この例では、 `AED設置場所` を使います。
+
+データ名列が「AED設置場所(0002)」の行、「GeoJSON」のリンク先をコピーします。
 
 ```
 const myCity = new city.Takamatsu.Map();
 
-myCity.on('load', () => {  
-  
-  myCity.loadGeoJSON("AED設置場所")
-    
-})
+myCity.on('load', () => {
+  // まず、GeoJSONデータを読み込みます。
+  fetch("https://opendata.takamatsu-fact.com/aed_location/data.geojson")
+    .then((data) => data.json())
+    .then((data) => {
+      // GeoJSONのデータを地図に追加します。
+      myCity.addSource('aed_location', {
+        type: 'geojson',
+        data: data,
+      });
+
+      // 次は、GeoJSONデータを表示させるための地図レイヤーを追加します。
+      myCity.addLayer({
+        id: 'aed_location_points',
+        source: 'aed_location', // ←こちらは addSource の第一引数 'aed_location' と紐づけるための値です
+        type: "circle",
+        paint: {
+          'circle-radius': 7,
+          'circle-color': 'white',
+          'circle-opacity': .8,
+          'circle-stroke-width': 1,
+          'circle-stroke-color': 'gray',
+          'circle-stroke-opacity': 1,
+        },
+      });
+    });
+});
 ```
+
+スタイルをカストマイズするには、 `addLayer` の `paint` 設定を使います。詳しくは、 [MapLibre GL JS のドキュメンテーション](https://maplibre.org/maplibre-gl-js-docs/style-spec/layers/#circle) を確認してください。
 
 ### 都市情報APIのデータを取得する
 
