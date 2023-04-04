@@ -99,6 +99,27 @@ myCity.on('load', () => {
 スタイルの設定は、 `addLayer` の `paint` 設定を使います。詳しくは、 [MapLibre GL JS のドキュメンテーション](https://maplibre.org/maplibre-gl-js-docs/style-spec/layers/#circle) を確認してください。
 
 
+### 都市情報APIのデータを取得する
+
+以下のように地図上に表示している地物（ポリゴンや点）のデータを取得できます。
+
+```
+const myCity = new city.Takamatsu.Map();
+
+myCity.on("load", () => {
+  myCity.loadData("商業地域");
+
+  myCity.on("click", (e) => {
+    const features = myCity.queryRenderedFeatures(e.point, {
+      layers: ["商業地域"]
+    });
+    console.log(features);
+  });
+});
+```
+
+[Codepen で確認する](https://codepen.io/naogify/pen/OJoKqZW)
+
 ## カスタマイズする
 
 高松市スマートマップは、Maplibre, Geolonia Maps と互換性があります。詳しいカスタマイズの方法は、[API Reference \| MapLibre GL JS Docs \| MapLibre](https://maplibre.org/maplibre-gl-js-docs/api/) を参照してください。
