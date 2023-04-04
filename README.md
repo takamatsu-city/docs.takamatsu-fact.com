@@ -34,7 +34,7 @@ const myCity = new city.Takamatsu.Map();
 myCity.on('load', () => {})
 ```
 
-[Codepen で確認する](https://codepen.io/shinichin/pen/VwGGZyq)
+[Codepen で確認する](https://codepen.io/geolonia/pen/abaeMxg)
 
 ### 高松市のデータを表示する
 
@@ -118,7 +118,7 @@ myCity.on("load", () => {
 });
 ```
 
-[Codepen で確認する](https://codepen.io/naogify/pen/OJoKqZW)
+[Codepen で確認する](https://codepen.io/geolonia/pen/yLxmwrx)
 
 ## カスタマイズする
 
