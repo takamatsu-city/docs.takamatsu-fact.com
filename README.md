@@ -118,13 +118,8 @@ myCity.on("load", () => {
 });
 ```
 
-<p class="codepen" data-height="300" data-default-tab="html,result" data-slug-hash="yLxmwrx" data-user="geolonia" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
-  <span>See the Pen <a href="https://codepen.io/geolonia/pen/yLxmwrx">
-  高松市スマートマップ | クリックした地点のデータを取得</a> by Geolonia (<a href="https://codepen.io/geolonia">@geolonia</a>)
-  on <a href="https://codepen.io">CodePen</a>.</span>
-</p>
-<script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
-
+![スクリーンショット 2023-04-05 16 00 56](https://user-images.githubusercontent.com/1124652/230005265-a76886d8-b38e-454a-89fb-461c4fa6560f.png)
+[Codepen で触ってみる](https://codepen.io/geolonia/pen/yLxmwrx)
 
 ## カスタマイズする
 
