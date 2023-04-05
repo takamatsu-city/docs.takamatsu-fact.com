@@ -34,7 +34,7 @@ const myCity = new city.Takamatsu.Map();
 myCity.on('load', () => {})
 ```
 
-[Codepen で確認する](https://codepen.io/shinichin/pen/VwGGZyq)
+[Codepen で確認する](https://codepen.io/geolonia/pen/abaeMxg)
 
 ### 高松市のデータを表示する
 
@@ -97,6 +97,33 @@ myCity.on('load', () => {
 ```
 
 スタイルの設定は、 `addLayer` の `paint` 設定を使います。詳しくは、 [MapLibre GL JS のドキュメンテーション](https://maplibre.org/maplibre-gl-js-docs/style-spec/layers/#circle) を確認してください。
+
+
+### 都市情報APIのデータを取得する
+
+以下のように地図上に表示している地物（ポリゴンや点）のデータを取得できます。
+
+```
+const myCity = new city.Takamatsu.Map();
+
+myCity.on("load", () => {
+  myCity.loadData("商業地域");
+
+  myCity.on("click", (e) => {
+    const features = myCity.queryRenderedFeatures(e.point, {
+      layers: ["商業地域"]
+    });
+    console.log(features.map(feature => feature.properties));
+  });
+});
+```
+
+<p class="codepen" data-height="300" data-default-tab="html,result" data-slug-hash="yLxmwrx" data-user="geolonia" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+  <span>See the Pen <a href="https://codepen.io/geolonia/pen/yLxmwrx">
+  高松市スマートマップ | クリックした地点のデータを取得</a> by Geolonia (<a href="https://codepen.io/geolonia">@geolonia</a>)
+  on <a href="https://codepen.io">CodePen</a>.</span>
+</p>
+<script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
 
 
 ## カスタマイズする
