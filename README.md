@@ -11,7 +11,7 @@
 ```
 <div id="map"></div>
 
-<script type="text/javascript" src="https://geolonia.github.io/takamatsu-maps-sdk/index.js"></script>
+<script type="text/javascript" src="https://city.geolonia.com/v1/kagawa/takamatsu/api.js"></script>
 ```
 
 **CSS**
@@ -30,8 +30,6 @@ html, body, #map
 
 ```
 const myCity = new city.Takamatsu.Map();
-
-myCity.on('load', () => {})
 ```
 
 [Codepen で確認する](https://codepen.io/geolonia/pen/abaeMxg)
