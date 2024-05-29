@@ -133,6 +133,28 @@ API キーを使用して以下のようにスクリプトを読み込むこと�
 `https://city.geolonia.com/v1/kagawa/takamatsu/api.js?api-key=<APIキー>`
 
 
+### 開発環境での利用
+
+高松市スマートマップは以下のドメインでは、APIキーの指定なしで利用できます。
+
+* `http://127.0.0.1:*`
+* `http://localhost:*`
+* `https://*.test` (`http` も対応、全てのポート番号対応)
+* `https://*.example` (`http` も対応、全てのポート番号対応)
+* GitHub Pages（`https://*.github.io`） ※ 独自ドメインは対象外。
+* Netlify (`https://*.netlify.com`, `https://*.netlify.app`) ※ 独自ドメインは対象外。
+* Vercel (`https://*.vercel.app`) ※ 独自ドメインは対象外。
+* [CodePen](https://codepen.io/)
+* [JSFiddle](https://jsfiddle.net/)
+* [CodeSandbox](https://codesandbox.io/)
+* [PLAYCODE](https://playcode.io)
+* [Web Maker](https://webmaker.app)
+
+* URL は、スキーマも含めて一致する必要があります。たとえば、`http://127.0.0.1:8000` では利用可能ですが、 `https://127.0.0.1:8000` ではスキーマが違う (`http` と `https`) ため利用できません。
+* 上記の URL で表示された地図へのアクセスは、ダッシュボードの地図表示回数から除外されます。
+
+
+
 ## 「高松市スマートマップ」と「高松都市情報API」 について
 
 「高松市スマートマップ」と「高松都市情報API」 は、高松市が公開するサービスです。
