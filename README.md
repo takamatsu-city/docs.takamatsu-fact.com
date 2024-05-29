@@ -123,6 +123,36 @@ myCity.on("load", () => {
 
 高松市スマートマップは、Maplibre, Geolonia Maps と互換性があります。詳しいカスタマイズの方法は、[API Reference \| MapLibre GL JS Docs \| MapLibre](https://maplibre.org/maplibre-gl-js-docs/api/) を参照してください。
 
+## 独自ドメインでホスティングする
+
+高松市スマートマップを、独自ドメインでホスティングする場合は高松市にお問い合わせください。
+
+問い合わせの際には、利用するドメイン名を伝えてください。その後 API キーを発行します。
+API キーを使用して以下のようにスクリプトを読み込むことができます。
+
+`https://city.geolonia.com/v1/kagawa/takamatsu/api.js?api-key=<APIキー>`
+
+
+### 開発環境での利用
+
+高松市スマートマップは以下のドメインでは、APIキーの指定なしで利用できます。
+
+* `http://127.0.0.1:*`
+* `http://localhost:*`
+* `https://*.test` (`http` も対応、全てのポート番号対応)
+* `https://*.example` (`http` も対応、全てのポート番号対応)
+* GitHub Pages（`https://*.github.io`） ※ 独自ドメインは対象外。
+* Netlify (`https://*.netlify.com`, `https://*.netlify.app`) ※ 独自ドメインは対象外。
+* Vercel (`https://*.vercel.app`) ※ 独自ドメインは対象外。
+* [CodePen](https://codepen.io/)
+* [JSFiddle](https://jsfiddle.net/)
+* [CodeSandbox](https://codesandbox.io/)
+* [PLAYCODE](https://playcode.io)
+* [Web Maker](https://webmaker.app)
+
+* URL は、スキーマも含めて一致する必要があります。たとえば、`http://127.0.0.1:8000` では利用可能ですが、 `https://127.0.0.1:8000` ではスキーマが違う (`http` と `https`) ため利用できません。
+
+
 ## 「高松市スマートマップ」と「高松都市情報API」 について
 
 「高松市スマートマップ」と「高松都市情報API」 は、高松市が公開するサービスです。
