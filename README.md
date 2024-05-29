@@ -125,15 +125,12 @@ myCity.on("load", () => {
 
 ## 独自ドメインでホスティングする
 
-高松市スマートマップを、独自ドメインでホスティングする場合は、高松市に問い合わせ API キーを取得して、以下のように設定してください。
+高松市スマートマップを、独自ドメインでホスティングする場合は高松市に問い合わせてください。
 
-**HTML**
+問い合わせの際には、利用するドメイン名を伝えてください。その後 API キーを発行します。
+API キーを使用して以下のようにスクリプトを読み込むことができます。
 
-```
-<div id="map"></div>
-
-<script type="text/javascript" src="https://city.geolonia.com/v1/kagawa/takamatsu/api.js?api-key=<APIキー>"></script>
-```
+`https://city.geolonia.com/v1/kagawa/takamatsu/api.js?api-key=<APIキー>`
 
 
 ## 「高松市スマートマップ」と「高松都市情報API」 について
