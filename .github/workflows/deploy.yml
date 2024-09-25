@@ -45,4 +45,4 @@ jobs:
             --delete \
             --cache-control "public,max-age=60" \
 
-          aws cloudfront create-invalidation --distribution-id "E3TYEMKZU5PIN1" --paths "/*"
+          aws cloudfront create-invalidation --distribution-id "E2MOC45M3QFEEU" --paths "/*"
