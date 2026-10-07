@@ -11,8 +11,10 @@
 ```
 <div id="map"></div>
 
-<script type="text/javascript" src="https://city.geolonia.com/v1/kagawa/takamatsu/api.js"></script>
+<script type="text/javascript" src="https://（SDK の配信 URL。公開時に決定）/api.js"></script>
 ```
+
+> 新しい SDK の配信 URL は、公開時に決まります。決まりしだい、このページに記載します。
 
 **CSS**
 
@@ -32,8 +34,6 @@ html, body, #map
 const myCity = new city.Takamatsu.Map();
 ```
 
-[Codepen で確認する](https://codepen.io/geolonia/pen/abaeMxg)
-
 ### 高松市のデータを表示する
 
 高松市が[高松市スマートマップ](https://maps.takamatsu-fact.com/)公開しているデータを、地図上に表示できます。
@@ -45,14 +45,14 @@ const myCity = new city.Takamatsu.Map();
 ```
 const myCity = new city.Takamatsu.Map();
 
-myCity.on('load', () => {  
-  
-  myCity.loadData("商業地域")
-    
-})
+myCity.on('load', () => {
+  myCity.loadData("都市計画情報/用途地域/商業地域");
+});
 ```
 
-* 第一引数には、高松市スマートマップに表示されているデータの `class` 文字列を入れてください。
+* 第一引数には、高松市スマートマップのメニューに表示されているデータの名前を、文字列で入れてください。
+* カテゴリの中にあるデータは、メニューの階層を `/` でつないで指定します（例: `都市計画情報/用途地域/商業地域`）。
+* `loadData` は、表示したレイヤーの ID の配列を返します（Promise）。
 
 **施設情報を表示する**
 
@@ -105,53 +105,26 @@ myCity.on('load', () => {
 const myCity = new city.Takamatsu.Map();
 
 myCity.on("load", () => {
-  myCity.loadData("商業地域");
-
-  myCity.on("click", (e) => {
-    const features = myCity.queryRenderedFeatures(e.point, {
-      layers: ["商業地域"]
+  myCity.loadData("都市計画情報/用途地域/商業地域").then((layers) => {
+    myCity.on("click", (e) => {
+      const features = myCity.queryRenderedFeatures(e.point, {
+        layers: layers
+      });
+      console.log(features.map(feature => feature.properties));
     });
-    console.log(features.map(feature => feature.properties));
   });
 });
 ```
 
-![スクリーンショット 2023-04-05 16 00 56](https://user-images.githubusercontent.com/1124652/230005265-a76886d8-b38e-454a-89fb-461c4fa6560f.png)
-[Codepen で触ってみる](https://codepen.io/geolonia/pen/yLxmwrx)
+地図上の商業地域をクリックすると、次のような属性がコンソールに表示されます。
+
+```
+[{ "用途名": "商業地域", "建ぺい率": "８／１０以下", "容積率": "４０／１０以下", "高さ制限": "－" }]
+```
 
 ## カスタマイズする
 
 高松市スマートマップは、Maplibre, Geolonia Maps と互換性があります。詳しいカスタマイズの方法は、[Intro - MapLibre GL JS](https://maplibre.org/maplibre-gl-js/docs/API/) を参照してください。
-
-## 独自ドメインでホスティングする
-
-高松市スマートマップを、独自ドメインでホスティングする場合は高松市にお問い合わせください。
-
-問い合わせの際には、利用するドメイン名を伝えてください。その後 API キーを発行します。
-API キーを使用して以下のようにスクリプトを読み込むことができます。
-
-`https://city.geolonia.com/v1/kagawa/takamatsu/api.js?api-key=<APIキー>`
-
-
-### 開発環境での利用
-
-高松市スマートマップは以下のドメインでは、APIキーの指定なしで利用できます。
-
-* `http://127.0.0.1:*`
-* `http://localhost:*`
-* `https://*.test` (`http` も対応、全てのポート番号対応)
-* `https://*.example` (`http` も対応、全てのポート番号対応)
-* GitHub Pages（`https://*.github.io`） ※ 独自ドメインは対象外。
-* Netlify (`https://*.netlify.com`, `https://*.netlify.app`) ※ 独自ドメインは対象外。
-* Vercel (`https://*.vercel.app`) ※ 独自ドメインは対象外。
-* [CodePen](https://codepen.io/)
-* [JSFiddle](https://jsfiddle.net/)
-* [CodeSandbox](https://codesandbox.io/)
-* [PLAYCODE](https://playcode.io)
-* [Web Maker](https://webmaker.app)
-
-* URL は、スキーマも含めて一致する必要があります。たとえば、`http://127.0.0.1:8000` では利用可能ですが、 `https://127.0.0.1:8000` ではスキーマが違う (`http` と `https`) ため利用できません。
-
 
 ## 「高松市スマートマップ」と「高松都市情報API」 について
 
