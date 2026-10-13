@@ -126,6 +126,20 @@ myCity.on("load", () => {
 
 高松市スマートマップは、Maplibre, Geolonia Maps と互換性があります。詳しいカスタマイズの方法は、[Intro - MapLibre GL JS](https://maplibre.org/maplibre-gl-js/docs/API/) を参照してください。
 
+## 独自ドメインでホスティングする
+
+新しい SDK では、API キーや利用するドメインの登録は不要です。「[地図を表示する](#地図を表示する)」のとおり `api.js` を読み込むだけで、独自ドメインのウェブサイトでも高松市スマートマップを利用できます。
+
+* `api.js` の URL に API キーを付ける必要はありません。
+* 以前の SDK（`https://city.geolonia.com/v1/kagawa/takamatsu/api.js`）で使っていた API キーは、新しい SDK では使いません。以前の SDK から移行する場合は、script の URL を新しい SDK の配信 URL に差し替えてください。
+
+### 開発環境での利用
+
+開発環境でも、API キーの指定なしで利用できます。以前の SDK のような、利用できるドメインの一覧はありません。
+
+* `http://localhost:*` や `http://127.0.0.1:*` などのローカルの開発サーバーで、そのまま動かせます。
+* CodePen や JSFiddle などのオンラインエディタ、GitHub Pages・Netlify・Vercel などのホスティングサービスでも、同じように利用できます。
+
 ## 「高松市スマートマップ」と「高松都市情報API」 について
 
 「高松市スマートマップ」と「高松都市情報API」 は、高松市が公開するサービスです。
