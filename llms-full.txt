@@ -1,0 +1,12 @@
+---
+layout: null
+permalink: /llms-full.txt
+---
+{%- comment -%}
+  AI 向けの全文（https://llmstxt.org/ の llms-full.txt）。本文は README.md をそのまま使う
+{%- endcomment -%}
+# {{ site.title }}
+
+> {{ site.description }}
+
+{% include_relative README.md %}

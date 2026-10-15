@@ -1,0 +1,41 @@
+---
+layout: null
+permalink: /llms.txt
+---
+{%- comment -%}
+  AI 向けの案内（https://llmstxt.org/ の llms.txt）。README.md の見出し（## と ###）から各節へのリンクを作る。
+  リンク先の ID は kramdown の自動 ID（小文字にし、記号を除き、空白を - にする）に合わせる
+{%- endcomment -%}
+{%- capture readme -%}{% include_relative README.md %}{%- endcapture -%}
+{%- capture nl %}
+{% endcapture -%}
+{%- assign lines = readme | split: nl -%}
+{%- assign in_code = false -%}
+# {{ site.title }}
+
+> {{ site.description }}
+
+## Docs
+
+- [{{ site.title }}（全文）]({{ "/llms-full.txt" | relative_url }}): このドキュメントの本文全体を Markdown にしたもの
+{%- for line in lines -%}
+  {%- assign fence = line | slice: 0, 3 -%}
+  {%- if fence == "```" -%}
+    {%- if in_code -%}{%- assign in_code = false -%}{%- else -%}{%- assign in_code = true -%}{%- endif -%}
+    {%- continue -%}
+  {%- endif -%}
+  {%- if in_code -%}{%- continue -%}{%- endif -%}
+  {%- assign h3 = line | slice: 0, 4 -%}
+  {%- assign h2 = line | slice: 0, 3 -%}
+  {%- if h3 == "### " -%}
+    {%- assign indent = "  " -%}
+    {%- assign name = line | remove_first: "### " | strip -%}
+  {%- elsif h2 == "## " -%}
+    {%- assign indent = "" -%}
+    {%- assign name = line | remove_first: "## " | strip -%}
+  {%- else -%}
+    {%- continue -%}
+  {%- endif -%}
+  {%- assign id = name | downcase | remove: "「" | remove: "」" | remove: "『" | remove: "』" | remove: "（" | remove: "）" | remove: "(" | remove: ")" | remove: "、" | remove: "。" | remove: "・" | remove: "：" | remove: ":" | remove: "？" | remove: "?" | remove: "！" | remove: "!" | strip | replace: " ", "-" %}
+{{ indent }}- [{{ name }}]({{ "/" | relative_url }}#{{ id | url_encode }})
+{%- endfor %}
