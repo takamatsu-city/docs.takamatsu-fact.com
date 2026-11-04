@@ -11,10 +11,8 @@
 ```
 <div id="map"></div>
 
-<script type="text/javascript" src="https://（SDK の配信 URL。公開時に決定）/api.js"></script>
+<script type="text/javascript" src="https://maps.takamatsu-fact.com/api.js"></script>
 ```
-
-> 新しい SDK の配信 URL は、公開時に決まります。決まりしだい、このページに記載します。
 
 **CSS**
 
@@ -131,7 +129,7 @@ myCity.on("load", () => {
 新しい SDK では、API キーや利用するドメインの登録は不要です。「[地図を表示する](#地図を表示する)」のとおり `api.js` を読み込むだけで、独自ドメインのウェブサイトでも高松市スマートマップを利用できます。
 
 * `api.js` の URL に API キーを付ける必要はありません。
-* 以前の SDK（`https://city.geolonia.com/v1/kagawa/takamatsu/api.js`）で使っていた API キーは、新しい SDK では使いません。以前の SDK から移行する場合は、script の URL を新しい SDK の配信 URL に差し替えてください。
+* 以前の SDK（`https://city.geolonia.com/v1/kagawa/takamatsu/api.js`）で使っていた API キーは、新しい SDK では使いません。以前の SDK から移行する場合は、script の URL を新しい SDK の配信 URL（`https://maps.takamatsu-fact.com/api.js`）に差し替えてください。
 
 ### 開発環境での利用
 
@@ -153,4 +151,4 @@ myCity.on("load", () => {
 
 ## ご利用にあたって
 
-ご利用にあたっては、「[高松市スマートマップ 利用規約](https://takamatsu-city.kagawa.smartmap.geolonia.com/terms)」に同意の上、ご利用ください。
+ご利用にあたっては、「[高松市スマートマップ 利用規約](https://maps.takamatsu-fact.com/terms)」に同意の上、ご利用ください。
