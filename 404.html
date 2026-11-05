@@ -1,3 +1,7 @@
+---
+# Front matter so that Jekyll renders the site.* variables below
+layout: null
+---
 <!DOCTYPE html>
 <html lang="ja">
 
@@ -46,11 +50,11 @@
   <header class="header">
     <div class="brand">
       <img src="assets/img/logo_smartcity-takamatsu.png" alt="スマートシティたかまつ" class="header__logo">
-      <h2 class="header__title">高松市スマートマップ 開発者向けドキュメンテーション</h2>
+      <h2 class="header__title">{{ site.title }}</h2>
     </div>
     <a class="maps-link" href="https://maps.takamatsu-fact.com/" target="_blank" rel="noopener noreferrer">
       <img src="./assets/img/map.svg" alt="ファイルアイコン">
-      <p>高松市スマートマップ</p><img src="./assets/img/arrow-right.svg" class="maps-link__arrow" alt="矢印アイコン">
+      <p>{{ site.service_name }}</p><img src="./assets/img/arrow-right.svg" class="maps-link__arrow" alt="矢印アイコン">
     </a>
   </header>
   <main>

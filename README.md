@@ -1,4 +1,4 @@
-[高松市スマートマップ](https://maps.takamatsu-fact.com/)、およびデータAPIを使うと、営利・非営利を問わず、地図と位置情報を活用したウェブサイトやアプリケーションを作ることができます。
+[{{ site.service_name }}](https://maps.takamatsu-fact.com/)、およびデータAPIを使うと、営利・非営利を問わず、地図と位置情報を活用したウェブサイトやアプリケーションを作ることができます。
 
 ## クイックスタート
 
@@ -34,11 +34,11 @@ const myCity = new city.Takamatsu.Map();
 
 ### 高松市のデータを表示する
 
-高松市が[高松市スマートマップ](https://maps.takamatsu-fact.com/)公開しているデータを、地図上に表示できます。
+高松市が[{{ site.service_name }}](https://maps.takamatsu-fact.com/)で公開しているデータを、地図上に表示できます。
 
 **都市計画情報を表示する**
 
-`loadData` メソッドを使って、地図上に[高松市スマートマップ](https://maps.takamatsu-fact.com/)で公開されているポリゴンデータを表示できます。
+`loadData` メソッドを使って、地図上に[{{ site.service_name }}](https://maps.takamatsu-fact.com/)で公開されているポリゴンデータを表示できます。
 
 ```
 const myCity = new city.Takamatsu.Map();
@@ -48,13 +48,13 @@ myCity.on('load', () => {
 });
 ```
 
-* 第一引数には、高松市スマートマップのメニューに表示されているデータの名前を、文字列で入れてください。
+* 第一引数には、{{ site.service_name }}のメニューに表示されているデータの名前を、文字列で入れてください。
 * カテゴリの中にあるデータは、メニューの階層を `/` でつないで指定します（例: `都市計画情報/用途地域/商業地域`）。
 * `loadData` は、表示したレイヤーの ID の配列を返します（Promise）。
 
 **施設情報を表示する**
 
-地図上に[高松市スマートマップ](https://maps.takamatsu-fact.com/)で公開されているポイントデータを表示できます。
+地図上に[{{ site.service_name }}](https://maps.takamatsu-fact.com/)で公開されているポイントデータを表示できます。
 
 まずは、[高松市オープンデータ一覧](https://github.com/takamatsu-city/opendata/#%E9%AB%98%E6%9D%BE%E5%B8%82%E3%82%AA%E3%83%BC%E3%83%97%E3%83%B3%E3%83%87%E3%83%BC%E3%82%BF) から表示したいデータを選びます。この例では、 `AED設置場所` を使います。
 
@@ -122,11 +122,11 @@ myCity.on("load", () => {
 
 ## カスタマイズする
 
-高松市スマートマップは、Maplibre, Geolonia Maps と互換性があります。詳しいカスタマイズの方法は、[Intro - MapLibre GL JS](https://maplibre.org/maplibre-gl-js/docs/API/) を参照してください。
+{{ site.service_name }}は、Maplibre, Geolonia Maps と互換性があります。詳しいカスタマイズの方法は、[Intro - MapLibre GL JS](https://maplibre.org/maplibre-gl-js/docs/API/) を参照してください。
 
 ## 独自ドメインでホスティングする
 
-新しい SDK では、API キーや利用するドメインの登録は不要です。「[地図を表示する](#地図を表示する)」のとおり `api.js` を読み込むだけで、独自ドメインのウェブサイトでも高松市スマートマップを利用できます。
+新しい SDK では、API キーや利用するドメインの登録は不要です。「[地図を表示する](#地図を表示する)」のとおり `api.js` を読み込むだけで、独自ドメインのウェブサイトでも{{ site.service_name }}を利用できます。
 
 * `api.js` の URL に API キーを付ける必要はありません。
 * 以前の SDK（`https://city.geolonia.com/v1/kagawa/takamatsu/api.js`）で使っていた API キーは、新しい SDK では使いません。以前の SDK から移行する場合は、script の URL を新しい SDK の配信 URL（`https://maps.takamatsu-fact.com/api.js`）に差し替えてください。
@@ -138,17 +138,17 @@ myCity.on("load", () => {
 * `http://localhost:*` や `http://127.0.0.1:*` などのローカルの開発サーバーで、そのまま動かせます。
 * CodePen や JSFiddle などのオンラインエディタ、GitHub Pages・Netlify・Vercel などのホスティングサービスでも、同じように利用できます。
 
-## 「高松市スマートマップ」と「高松都市情報API」 について
+## 「{{ site.service_name }}」と「高松都市情報API」 について
 
-「高松市スマートマップ」と「高松都市情報API」 は、高松市が公開するサービスです。
+「{{ site.service_name }}」と「高松都市情報API」 は、高松市が公開するサービスです。
 
 市民、民間企業、学術団体が営利目的、非営利目的を問わず無料で利用し、地図と位置情報を活用したウェブサイトやアプリケーションを作ることができます。高松市もこの地図とAPIを利用して、市民向けサービスの開発や業務の合理化を進めています。
 
 この地図で表示・配信されている情報は、国土地理院の「地理院地図」、香川県が公開する「ハザードマップデータ」、OpenStreetMapのデータ等、自由なライセンスで公開された情報をベースに、高松市が保有している地図、位置情報をオープンデータとして公開しているものです。
 
 現在公開している情報は、都市計画にかかわる情報、市の設備施設情報、防災IoT情報などで、かんたんな記述でみなさんのウェブサイトやアプリの地図上に表示できる他、API
-での取得もできます。利用方法は、「高松市スマートマップ 開発者向けドキュメンテーション」をお読みください。
+での取得もできます。利用方法は、「{{ site.title }}」をお読みください。
 
 ## ご利用にあたって
 
-ご利用にあたっては、「[高松市スマートマップ 利用規約](https://maps.takamatsu-fact.com/terms)」に同意の上、ご利用ください。
+ご利用にあたっては、「[{{ site.service_name }} 利用規約](https://maps.takamatsu-fact.com/terms)」に同意の上、ご利用ください。
