@@ -1,5 +1,9 @@
 theme: jekyll-theme-cayman
-title: 高松市スマートマップ 開発者向けドキュメンテーション
+# Service name shown throughout the site (README.md, layouts, 404.html, llms.txt).
+# The name is provisional and may change again; when it does, update service_name
+# and title below (title cannot reference service_name because YAML has no variables).
+service_name: スマートTAKAmap
+title: スマートTAKAmap 開発者向けドキュメンテーション
 description: 高松市が公開する地図と都市情報 API を活用したウェブサイトやアプリケーションを作る開発者のためのドキュメンテーションサイト
 google_analytics: G-TWMZDSGLQ4
 lang: "ja_JP"
